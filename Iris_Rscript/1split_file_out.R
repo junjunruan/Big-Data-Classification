@@ -1,0 +1,12 @@
+
+#------------------Iris data sets-------------------------------#
+v <- read.table ("/home/hduser/Documents/R/iris.data.txt", sep = "")
+class <- unique (v[,5])
+
+#split data file according to classes
+
+for(i in 1:length(class)){
+  indx = which (v[,5] %in% class[i])
+  val <- c (v[indx,1],v[indx,2],v[indx,3],v[indx,4])
+  write.table(matrix(val,ncol=4,byrow=FALSE),paste("/home/hduser/Documents/R/Iris_output/",class[i],".txt",sep=""))
+}

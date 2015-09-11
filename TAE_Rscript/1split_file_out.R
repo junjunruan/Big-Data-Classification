@@ -1,0 +1,10 @@
+
+#------------------TAE data sets-------------------------------#
+v <- read.table ("/home/hduser/Documents/R/tae.data.txt", sep = "")
+class <- unique (v[,6])
+
+for(i in 1:length(class)){
+  indx = which (v[,6] %in% class[i])
+  val <- c (v[indx,1], v[indx,2],v[indx,3],v[indx,4],v[indx,5])
+  write.table(matrix(val,ncol=5,byrow=FALSE),paste("/home/hduser/Documents/TAE_output/R/",class[i],".txt",sep=""))
+}
