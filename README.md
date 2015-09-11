@@ -6,4 +6,4 @@
 
 - Evaluated the advantage of Hadoop system in big data processing.
 
-Technics: R, Hadoop, MapReduce
+  Technics: R, Hadoop, MapReduce
